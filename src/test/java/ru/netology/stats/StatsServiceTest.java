@@ -3,11 +3,9 @@ package ru.netology.stats;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class StatsServiceTest {
     @Test
-    public void testSun() {
+    public void testSum() {
         StatsService service = new StatsService();;
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
@@ -18,12 +16,12 @@ class StatsServiceTest {
     }
 
     @Test
-    public void testAverageSun() {
+    public void testAverageSum() {
         StatsService service = new StatsService();;
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         long actual = service.averagesum(sales);
-        long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
+        long expected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
 
         Assertions.assertEquals(expected, actual);
     }
