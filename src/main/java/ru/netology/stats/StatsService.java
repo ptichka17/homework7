@@ -4,18 +4,14 @@ public class StatsService {                      //метод суммы все�
     public long sum(long[] sales) {
         long result = 0;
         for (long sale : sales) {
-            result = result + sale;
+            result += sale;
         }
         return result;
     }
 
 
     public long averagesum(long[] sales) {       //метод средняя сумма продаж в месяц
-        long result = 0;
-        for (long sale : sales) {
-            result = result + sale;
-        }
-        return result / 12;
+        return sum(sales) / sales.length;
     }
 
 
@@ -29,7 +25,6 @@ public class StatsService {                      //метод суммы все�
                 maxSale = sales[i];
             }
         }
-
         return maxMonth + 1;
     }
 
@@ -44,7 +39,6 @@ public class StatsService {                      //метод суммы все�
                 minSale = sales[i];
             }
         }
-
         return minMonth + 1;
     }
 
@@ -59,7 +53,8 @@ public class StatsService {                      //метод суммы все�
         return counter;
     }
 
-    public int monthsHigherAverage(long[] sales) { //метод количество месяцев, в которых продажи были выше среднего
+
+     public int monthsHigherAverage(long[] sales) { //метод количество месяцев, в которых продажи были выше среднего
         int counter = 0;
         for (long sale : sales) {
             if (sale > averagesum(sales)) {
